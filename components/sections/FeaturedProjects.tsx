@@ -1,5 +1,6 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
+import { IoLocationOutline } from "react-icons/io5";
 import Link from "next/link";
 
 export default function FeaturedProjects() {
@@ -15,7 +16,7 @@ export default function FeaturedProjects() {
       title: "Indian Oil Corporation",
       location: "Panipat Marketing Complex",
       category: "2013-14",
-      image: "/images/project-mechanical.jpg",
+      image: "/projects/1.jpeg",
       headline: "Contracted by: Anuj Engineering Company",
       desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
     },
@@ -24,7 +25,7 @@ export default function FeaturedProjects() {
       title: "Bharat Petroleum",
       location: "Top Khodi, Haryana",
       category: "2013-14",
-      image: "/images/project-wrapping.jpg",
+      image: "/projects/2.jpeg",
       headline: "Contracted by: Balaji Enterprises",
       desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
     },
@@ -33,7 +34,7 @@ export default function FeaturedProjects() {
       title: "Bharat Petroleum",
       location: "Bijwasan Installation, Delhi",
       category: "2014-15",
-      image: "/images/project-blasting.jpg",
+      image: "/projects/3.jpeg",
       headline: "Contracted by: Dee Gee Saw & Metal Work (P) Ltd.",
       desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
     },
@@ -42,7 +43,7 @@ export default function FeaturedProjects() {
       title: "Bharat Petroleum",
       location: "Jaipur Pipeline Terminal",
       category: "2014-15",
-      image: "/images/project-scaffolding.jpg",
+      image: "/projects/4.jpeg",
       headline: "Contracted by: Civtect(I) Pvt. Ltd",
       desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
     },
@@ -51,7 +52,7 @@ export default function FeaturedProjects() {
       title: "Bharat Petroleum",
       location: "BPCL Mathura Depot",
       category: "2014-15",
-      image: "/images/project-civil.jpg",
+      image: "/projects/5.jpeg",
       headline: "Contracted by: Techno Fac Contracts Pvt. Ltd",
       desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
     },
@@ -60,7 +61,7 @@ export default function FeaturedProjects() {
       title: "Bharat Petroleum",
       location: "Panipat",
       category: "2015-16",
-      image: "/images/project-insulation.jpg",
+      image: "/projects/6.jpeg",
       headline: "Contracted by: Petro India & Engg. Co.",
       desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
     },
@@ -69,7 +70,7 @@ export default function FeaturedProjects() {
       title: "Bharat Petroleum",
       location: "Mathura Installation",
       category: "2016-17",
-      image: "/images/project-mechanical.jpg",
+      image: "/projects/7.jpeg",
       headline: "Contracted by: Dee Gee Saw & Metal Work (P) Ltd.",
       desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
     },
@@ -78,7 +79,7 @@ export default function FeaturedProjects() {
       title: "Bharat Petroleum",
       location: "Mathura",
       category: "2016-17",
-      image: "/images/project-wrapping.jpg",
+      image: "/projects/1.jpeg",
       headline: "Contracted by: Dee Gee Saw & Metal Work (P) Ltd.",
       desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
     },
@@ -87,7 +88,7 @@ export default function FeaturedProjects() {
       title: "Hindustan Petroleum",
       location: "Nalagarh, Himachal Pradesh",
       category: "2017-18",
-      image: "/images/project-blasting.jpg",
+      image: "/projects/2.jpeg",
       headline: "Contracted by: Blue Star Engineering Company",
       desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
     },
@@ -96,7 +97,7 @@ export default function FeaturedProjects() {
       title: "Bharat Petroleum",
       location: "Sidhpur Depot, Gujarat",
       category: "2017-18",
-      image: "/images/project-scaffolding.jpg",
+      image: "/projects/3.jpeg",
       headline: "Contracted by: Dee Gee Saw & Metal Work (P) Ltd.",
       desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
     },
@@ -378,19 +379,7 @@ export default function FeaturedProjects() {
 
                     {/* Location Pin */}
                     <div className="flex items-center text-gray-400 text-xs font-bold font-mono">
-                      <svg
-                        className="w-4 h-4 mr-2 text-jmde-orange flex-shrink-0"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                        />
-                      </svg>
+                      <IoLocationOutline className="w-3.5 h-3.5 mr-1.5 text-jmde-orange flex-shrink-0" />
                       {projects[activeIndex].location.toUpperCase()}
                     </div>
                   </div>
@@ -469,19 +458,8 @@ export default function FeaturedProjects() {
 
                       {/* Location Pin */}
                       <div className="flex items-center text-gray-400 text-[11px] font-mono w-full truncate">
-                        <svg
-                          className="w-3.5 h-3.5 mr-1.5 text-jmde-orange flex-shrink-0"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                          />
-                        </svg>
+                        <IoLocationOutline className="w-3.5 h-3.5 mr-1.5 text-jmde-orange flex-shrink-0" />
+
                         <span className="truncate">
                           {project.location.toUpperCase()}
                         </span>

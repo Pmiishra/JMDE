@@ -120,7 +120,7 @@ export default function Footer() {
               ].map((item) => (
                 <li key={item}>
                   <Link
-                    href={`#${item.toLowerCase()}`}
+                    href={`/${item.toLowerCase()}`}
                     className="group flex items-center text-center text-sm text-slate-700 hover:text-slate-900 font-semibold transition-colors duration-200"
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-slate-700 mr-3 group-hover:bg-slate-900 transition-colors"></span>

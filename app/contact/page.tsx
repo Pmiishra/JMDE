@@ -65,7 +65,7 @@ export default function ContactPage() {
         {/* Background Image & Overlay */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/images/hero_3.png')" }} // Update with your image path
+          style={{ backgroundImage: "url('/images/contact_us_page.png')" }} // Update with your image path
         ></div>
         <div className="absolute inset-0 z-10 bg-jmde-blue/80 mix-blend-multiply"></div>
         <div className="absolute inset-0 z-10 bg-gradient-to-r from-jmde-blue/90 via-jmde-blue/60 to-transparent"></div>
@@ -241,20 +241,20 @@ export default function ContactPage() {
               </div>
 
               {/* Bottom Business Hours Block */}
-              <div className="relative z-10 mt-12 pt-8 border-t border-white/10">
-                <div className="grid grid-cols-2 gap-6">
-                  <div>
-                    <h5 className="text-[#F36B21] text-xs font-bold uppercase tracking-widest mb-3">
-                      Office Hours
-                    </h5>
-                    <p className="text-white/90 text-sm font-medium leading-relaxed">
-                      Mon – Sat
-                      <br />
-                      09:00 AM – 06:00 PM
-                      <br />
-                      <span className="text-white/50">Sunday: Closed</span>
-                    </p>
-                  </div>
+              <div className="relative z-10 mt-12 pt-8 border-t border-white/10 items-center text-center">
+                {/* <div className="grid grid-row-2 gap-6"> */}
+                <div>
+                  <h5 className="text-[#F36B21] text-xs font-bold uppercase tracking-widest mb-3">
+                    Office Hours
+                  </h5>
+                  <p className="text-white/90 text-sm font-medium leading-relaxed">
+                    Mon – Sat
+                    <br />
+                    09:00 AM – 06:00 PM
+                    <br />
+                    <span className="text-white/50">Sunday: Closed</span>
+                  </p>
+                  {/* </div> */}
                   {/* <div>
                     <h5 className="text-[#F36B21] text-xs font-bold uppercase tracking-widest mb-3">
                       Site Hours
@@ -490,7 +490,6 @@ export default function ContactPage() {
               </p>
             </div>
           </FadeIn>
-
           <FadeIn delay={200}>
             <div className="relative w-full h-[500px] rounded-[24px] overflow-hidden shadow-xl border border-gray-200">
               {/* Google Map Embed */}
@@ -506,10 +505,12 @@ export default function ContactPage() {
                 className="absolute inset-0"
               ></iframe>
 
-              {/* Floating Location Overlay Card (Hidden on very small screens, visible on md and up) */}
-              {/* <div className="hidden md:block absolute bottom-8 left-8 bg-white p-6 rounded-2xl shadow-2xl border border-gray-100 max-w-sm z-10">
-                <div className="flex items-center gap-3 mb-4 border-b border-gray-100 pb-4">
-                  <div className="w-10 h-10 bg-[#123D82] rounded-full flex items-center justify-center">
+              {/* Floating Location Overlay Card (Exact Native Map Theme) */}
+              {/* <div className="hidden md:block absolute bottom-6 left-6 bg-white p-5 rounded-lg shadow-[0_2px_5px_rgba(0,0,0,0.3)] border border-gray-200/60 w-[340px] z-10 font-sans">
+              
+                <div className="flex items-center gap-3.5">
+                
+                  <div className="w-11 h-11 rounded-full bg-[#123D82] flex items-center justify-center shrink-0">
                     <svg
                       className="w-5 h-5 text-white"
                       fill="none"
@@ -519,25 +520,30 @@ export default function ContactPage() {
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        strokeWidth="2"
+                        strokeWidth="1.5"
                         d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
                       />
                     </svg>
                   </div>
-                  <div>
-                    <h4 className="text-lg font-black text-[#123D82]">
+                  <div className="flex flex-col justify-center">
+                    <h4 className="text-[17px] font-bold text-[#123D82] leading-tight mb-0.5">
                       JMDE Office
                     </h4>
-                    <p className="text-sm font-bold text-gray-500">
+                    <p className="text-[14px] font-medium text-[#70757A] leading-tight">
                       Mathura, Uttar Pradesh
                     </p>
                   </div>
                 </div>
 
-                <div className="space-y-3">
-                  <div className="flex items-center gap-3 text-sm text-gray-700 font-medium">
+               
+                <div className="w-full h-px bg-[#E8EAED] my-4"></div>
+
+               
+                <div className="flex flex-col gap-3.5">
+                 
+                  <div className="flex items-center gap-3.5">
                     <svg
-                      className="w-4 h-4 text-[#F36B21]"
+                      className="w-5 h-5 text-[#F36B21] shrink-0"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -549,11 +555,15 @@ export default function ContactPage() {
                         d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                       />
                     </svg>
-                    <span>+91 9557905990 / +91 7351905990</span>
+                    <span className="text-[14px] font-medium text-[#3C4043]">
+                      +91 9557905990 / +91 7351905990
+                    </span>
                   </div>
-                  <div className="flex items-center gap-3 text-sm text-gray-700 font-medium">
+
+                 
+                  <div className="flex items-center gap-3.5">
                     <svg
-                      className="w-4 h-4 text-[#F36B21]"
+                      className="w-5 h-5 text-[#F36B21] shrink-0"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -565,7 +575,7 @@ export default function ContactPage() {
                         d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                       />
                     </svg>
-                    <span className="truncate">
+                    <span className="text-[14px] font-medium text-[#3C4043] truncate">
                       jaimatadienterprises020@gmail.com
                     </span>
                   </div>
