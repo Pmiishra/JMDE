@@ -1,26 +1,66 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* JMDE Custom Colors */
+  --color-jmde-blue: #153E75;
+  --color-jmde-orange: #EB5E28;
+  --color-jmde-bg: #FFFFFF;
+  --color-jmde-sectionLight: #F8FAFC;
+  --color-jmde-text: #1E293B;
+  --color-jmde-border: #E2E8F0;
+  --color-jmde-success: #16A34A;
+  --color-jmde-black: #18181B;
+
+
+  /* JMDE Custom Border Radius */
+  --radius-premium: 14px;
+
+  /* JMDE Custom Shadows */
+  --shadow-premium: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --shadow-premium-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply bg-jmde-bg text-jmde-text antialiased;
   }
-}
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold text-jmde-blue tracking-tight;
+  }
+  
+  section {
+    @apply py-16 md:py-24;
+  }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* --- HIDE SCROLLBAR GLOBALLY --- */
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  html, body {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  html::-webkit-scrollbar, body::-webkit-scrollbar {
+    display: none;
+  }
+
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+  
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+  
+  .animation-delay-500 {
+    animation-delay: 0.5s;
+  }
 }
