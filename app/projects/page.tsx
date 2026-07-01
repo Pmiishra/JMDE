@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { IoLocationOutline } from "react-icons/io5";
 
 // --- ANIMATION HELPERS ---
 
@@ -101,7 +102,7 @@ export default function ProjectsPage() {
       title: "Indian Oil Corporation",
       location: "Panipat Marketing Complex",
       category: "2016-17",
-      image: "/projects/1.jpeg",
+      image: "/projects/pipeline.jpeg",
       headline: "Contracted by: Anuj Engineering Company",
       desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
     },
@@ -119,7 +120,7 @@ export default function ProjectsPage() {
       title: "Bharat Petroleum",
       location: "Bijwasan Installation, Delhi",
       category: "2016-17",
-      image: "/projects/3.jpeg",
+      image: "/projects/tank.jpeg",
       headline: "Contracted by: Dee Gee Saw & Metal Work (P) Ltd.",
       desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
     },
@@ -138,7 +139,7 @@ export default function ProjectsPage() {
       location: "BPCL Mathura Depot",
       category: "2016-17",
       image: "/projects/5.jpeg",
-      headline: "Contracted by: Techno Fac Contracts Pvt. Ltd",
+      headline: "Contracted by: Times project",
       desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
     },
     {
@@ -146,7 +147,7 @@ export default function ProjectsPage() {
       title: "Bharat Petroleum",
       location: "Panipat",
       category: "2016-17",
-      image: "/projects/7.jpeg",
+      image: "/projects/6.jpeg",
       headline: "Contracted by: Petro India & Engg. Co.",
       desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
     },
@@ -155,16 +156,16 @@ export default function ProjectsPage() {
       title: "Bharat Petroleum",
       location: "Mathura Installation",
       category: "2016-17",
-      image: "/images/project-mechanical.jpg",
+      image: "/projects/7.jpeg",
       headline: "Contracted by: Dee Gee Saw & Metal Work (P) Ltd.",
       desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
     },
     {
       id: "08",
       title: "Bharat Petroleum",
-      location: "Mathura",
+      location: "Beena Dispatch Terminal",
       category: "2016-17",
-      image: "/images/project-wrapping.jpg",
+      image: "/projects/8.jpeg",
       headline: "Contracted by: Dee Gee Saw & Metal Work (P) Ltd.",
       desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
     },
@@ -173,7 +174,7 @@ export default function ProjectsPage() {
       title: "Hindustan Petroleum",
       location: "Nalagarh, Himachal Pradesh",
       category: "2017-18",
-      image: "/images/project-blasting.jpg",
+      image: "/projects/9.jpeg",
       headline: "Contracted by: Blue Star Engineering Company",
       desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
     },
@@ -182,7 +183,7 @@ export default function ProjectsPage() {
       title: "Bharat Petroleum",
       location: "Sidhpur Depot, Gujarat",
       category: "2017-18",
-      image: "/images/project-scaffolding.jpg",
+      image: "/projects/10.jpeg",
       headline: "Contracted by: Dee Gee Saw & Metal Work (P) Ltd.",
       desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
     },
@@ -953,19 +954,7 @@ export default function ProjectsPage() {
                 {/* Project Details */}
                 <div className="px-2">
                   <div className="flex items-center gap-2 mb-3">
-                    <svg
-                      className="w-3.5 h-3.5 text-jmde-orange"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                      />
-                    </svg>
+                    <IoLocationOutline className="w-3.5 h-3.5 mr-1.5 text-jmde-orange flex-shrink-0" />
                     <span className="text-[10px] font-black uppercase tracking-widest text-gray-400">
                       {project.location}
                     </span>

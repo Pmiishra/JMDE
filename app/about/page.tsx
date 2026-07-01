@@ -382,7 +382,7 @@ export default function AboutPage() {
                 img: "/members/ajeet.jpeg",
               },
               {
-                name: "C.P. Mishra",
+                name: "Chandra Prakash Mishra",
                 role: "Project Manager",
                 mob: "+91 6388280767",
                 email: "cpmishra1943@gmail.com",
