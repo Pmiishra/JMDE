@@ -214,7 +214,7 @@ export default function Footer() {
                   href="tel:+91955790599"
                   className="text-sm text-slate-700 hover:text-slate-900 font-medium transition-colors duration-200"
                 >
-                  +91 955790599, +91 7351905990
+                  +91 9557905990, +91 7351905990
                 </a>
               </li>
             </ul>

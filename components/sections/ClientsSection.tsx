@@ -36,7 +36,7 @@ export default function ClientsSection() {
     {
       id: "bpcl",
       name: "BHARAT PETROLEUM CORPORATION LIMITED",
-      logo: "/clients/Bharat_petroleum-Log.png",
+      logo: "/clients/Bharat_Petroleum-Log.png",
       width: 300,
       height: 300,
     },
@@ -50,7 +50,7 @@ export default function ClientsSection() {
     {
       id: "hpcl",
       name: "HINDUSTAN PETROLEUM CORPORATION LIMITED",
-      logo: "/clients/Hindustan_petroleum-Logo.png",
+      logo: "/clients/Hindustan_Petroleum-Logo.png",
       width: 300,
       height: 300,
     },
