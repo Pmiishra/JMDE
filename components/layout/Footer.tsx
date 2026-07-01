@@ -120,7 +120,7 @@ export default function Footer() {
               ].map((item) => (
                 <li key={item}>
                   <Link
-                    href={`#${item.toLowerCase()}`}
+                    href={`/${item.toLowerCase()}`}
                     className="group flex items-center text-center text-sm text-slate-700 hover:text-slate-900 font-semibold transition-colors duration-200"
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-slate-700 mr-3 group-hover:bg-slate-900 transition-colors"></span>
@@ -234,7 +234,7 @@ export default function Footer() {
               <li className="text-sm text-slate-700 flex justify-between items-center font-medium pb-0">
                 <span>Mon - Sat:</span>
                 <span className="text-jmde-blue font-semibold">
-                  08:00 AM - 06:00 PM
+                  09:00 AM - 06:00 PM
                 </span>
               </li>
               <li className="text-sm text-slate-700 flex justify-between  pb-4 items-center font-medium">

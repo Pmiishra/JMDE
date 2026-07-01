@@ -232,7 +232,7 @@ export default function ClientsPage() {
         {/* Background Image & Overlay */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/images/hero_3.png')" }} // Update with your image path
+          style={{ backgroundImage: "url('/images/clients_page.png')" }} // Update with your image path
         ></div>
         <div className="absolute inset-0 z-10 bg-jmde-blue/80 mix-blend-multiply"></div>
         <div className="absolute inset-0 z-10 bg-gradient-to-r from-jmde-blue/90 via-jmde-blue/60 to-transparent"></div>

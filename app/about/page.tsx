@@ -358,6 +358,93 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      {/* SECTION 6 — OUR TEAM (REFINED PORTRAIT GALLERY) */}
+      <section className="py-[100px] bg-white relative">
+        <div className="max-w-[1400px] mx-auto px-6">
+          <div className="text-center group mb-16">
+            {/* UPDATED: Changed lg:mx-0 to mx-auto to ensure it stays centered */}
+            <div className="w-16 group-hover:w-32 transition-all duration-700 ease-out h-1.5 bg-gradient-to-r from-jmde-orange to-[#ff8c5a] rounded-full mb-6 mx-auto"></div>
+
+            <h2 className="text-4xl md:text-5xl font-black text-[#123D82]">
+              Team Members
+            </h2>
+            <p></p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                name: "Ajeet Singh",
+                role: "Director",
+                mob: "+91 9557905990",
+                email: "ajeetsingh5990@gmail.com",
+                img: "/members/ajeet.jpeg",
+              },
+              {
+                name: "C.P. Mishra",
+                role: "Project Manager",
+                mob: "+91 6388280767",
+                email: "cpmishra1943@gmail.com",
+                img: "/members/cp.jpeg",
+              },
+              {
+                name: "Chhotu Kumar",
+                role: "Civil Engineer",
+                mob: "+91 7061719638",
+                email: "kumarravichotu070@gmail.com",
+                img: "/members/chotu.jpeg",
+              },
+
+              {
+                name: "Akash Kumar",
+                role: "Accountant",
+                mob: "+91 8439260490",
+                email: "akashkumar.mtr85@gmail.com",
+                img: "/members/akash.jpeg",
+              },
+            ].map((member, idx) => (
+              <FadeIn key={idx} delay={idx * 100}>
+                <div className="relative group p-4 rounded-3xl bg-[#F8F9FB] transition-colors duration-500 flex flex-col items-center object-center text-center">
+                  {/* Image Frame */}
+                  <div className="relative w-32 h-32 mb-6">
+                    <img
+                      src={member.img}
+                      alt={member.name}
+                      className="w-full h-full rounded-full object-cover border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-500"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src =
+                          "/images/team/placeholder.jpg";
+                      }}
+                    />
+                  </div>
+
+                  {/* Info */}
+                  <h3 className="text-sm font-black text-[#123D82] mb-0.5">
+                    {member.name}
+                  </h3>
+                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#F36B21] mb-4">
+                    {member.role}
+                  </p>
+
+                  {/* Always Visible Contact Info (Cleaner layout) */}
+                  <div className="flex flex-col gap-1 w-full border-t border-gray-200 pt-4">
+                    <p className="text-[10px] font-bold text-gray-500 truncate">
+                      {member.mob}
+                    </p>
+                    <a
+                      href={`mailto:${member.email}`}
+                      className="text-[9px] font-bold text-gray-400 hover:text-[#123D82] transition-colors truncate"
+                    >
+                      {member.email}
+                    </a>
+                  </div>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

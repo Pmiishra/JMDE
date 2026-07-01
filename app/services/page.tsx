@@ -150,6 +150,20 @@ const whyChoose = [
 ];
 
 export default function ServicesPage() {
+  // State to track if the user is on a mobile device for specific animations
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024); // lg breakpoint
+    };
+
+    handleResize(); // Check immediately on mount
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <main className="min-h-screen bg-white font-sans text-gray-800">
       {/* =========================================
@@ -159,7 +173,7 @@ export default function ServicesPage() {
         {/* Background Image & Overlay */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/images/hero_3.png')" }}
+          style={{ backgroundImage: "url('/images/services_page.png')" }}
         ></div>
         <div className="absolute inset-0 z-10 bg-[#123D82]/80 mix-blend-multiply"></div>
         <div className="absolute inset-0 z-10 bg-gradient-to-r from-[#123D82]/90 via-[#123D82]/60 to-transparent"></div>
@@ -206,12 +220,11 @@ export default function ServicesPage() {
             </h2>
           </div>
 
-          {/* Changed to a 4-column grid for the 8 services */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {coreServices.map((service, idx) => (
               <Link href={service.link} key={idx}>
                 <div className="bg-white p-8 border border-gray-100 hover:border-[#123D82] hover:shadow-[0_20px_40px_rgba(18,61,130,0.08)] hover:-translate-y-2 transition-all duration-300 group rounded-[20px] h-full flex flex-col cursor-pointer">
-                  <div className="text-4xl mb-6 grayscale group-hover:grayscale-0 transition-all duration-300 transform group-hover:scale-110 origin-left">
+                  <div className="text-4xl mb-6 md:grayscale group-hover:grayscale-0 transition-all duration-300 transform group-hover:scale-110 origin-left">
                     {service.icon}
                   </div>
                   <h3 className="text-xl font-black text-[#1A1A1A] group-hover:text-[#123D82] transition-colors mb-3">
@@ -220,12 +233,6 @@ export default function ServicesPage() {
                   <p className="text-sm text-gray-500 font-medium leading-relaxed mb-6 flex-grow">
                     {service.desc}
                   </p>
-
-                  {/* Arrow Indicator */}
-                  {/* <div className="mt-auto flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-[#F36B21] group-hover:text-[#123D82] transition-colors">
-                    Explore Service 
-                    <span className="transform group-hover:translate-x-1 transition-transform">→</span>
-                  </div> */}
                 </div>
               </Link>
             ))}
@@ -241,7 +248,7 @@ export default function ServicesPage() {
           <div className="text-center mb-20">
             <div className="w-16 group-hover:w-32 transition-all duration-700 ease-out h-1.5 bg-gradient-to-r from-[#F36B21] to-[#ff8c5a] rounded-full mb-6 mx-auto"></div>
 
-            <h2 className="text-4xl md:text-5xl font-black text-jmde-blue mb-4">
+            <h2 className="text-4xl md:text-5xl font-black text-[#123D82] mb-4">
               How We Execute
             </h2>
             <span className="text-gray-400 text-[11px] font-black uppercase tracking-[0.2em] block mb-4">
@@ -255,26 +262,29 @@ export default function ServicesPage() {
             <div className="flex flex-col lg:flex-row justify-between gap-12 lg:gap-6 relative z-10">
               {processSteps.map((step, idx) => (
                 <div key={idx} className="flex-1 relative group">
-                  {idx !== processSteps.length - 1 && (
-                    <div className="block lg:hidden absolute top-12 left-[39px] w-px h-[calc(100%+30px)] bg-gray-200"></div>
-                  )}
+                  {/* Apply staggered delay ONLY on mobile view */}
+                  <FadeIn delay={isMobile ? idx * 200 : 0}>
+                    {idx !== processSteps.length - 1 && (
+                      <div className="block lg:hidden absolute top-12 left-[39px] w-px h-[calc(100%+30px)] bg-gray-200"></div>
+                    )}
 
-                  <div className="flex lg:flex-col gap-6 lg:gap-0 lg:items-center text-left lg:text-center">
-                    <div className="w-20 h-20 bg-white border-2 border-gray-200 rounded-full flex items-center justify-center group-hover:border-[#F36B21] group-hover:bg-[#F36B21] transition-colors duration-500 z-10 relative lg:mb-8 shrink-0">
-                      <span className="text-2xl font-black text-gray-300 group-hover:text-white transition-colors font-mono">
-                        {step.id}
-                      </span>
-                    </div>
+                    <div className="flex lg:flex-col gap-6 lg:gap-0 lg:items-center text-left lg:text-center">
+                      <div className="w-20 h-20 bg-white border-2 border-gray-200 rounded-full flex items-center justify-center group-hover:border-[#F36B21] group-hover:bg-[#F36B21] transition-colors duration-500 z-10 relative lg:mb-8 shrink-0">
+                        <span className="text-2xl font-black text-gray-300 group-hover:text-white transition-colors font-mono">
+                          {step.id}
+                        </span>
+                      </div>
 
-                    <div className="pt-4 lg:pt-0">
-                      <h3 className="text-lg font-black text-[#123D82] mb-2">
-                        {step.title}
-                      </h3>
-                      <p className="text-xs font-bold text-gray-400 uppercase tracking-widest leading-relaxed">
-                        {step.desc}
-                      </p>
+                      <div className="pt-4 lg:pt-0">
+                        <h3 className="text-lg font-black text-[#123D82] mb-2">
+                          {step.title}
+                        </h3>
+                        <p className="text-xs font-bold text-gray-400 uppercase tracking-widest leading-relaxed">
+                          {step.desc}
+                        </p>
+                      </div>
                     </div>
-                  </div>
+                  </FadeIn>
                 </div>
               ))}
             </div>
@@ -290,15 +300,11 @@ export default function ServicesPage() {
           {/* Left Column: Sticky Header */}
           <div className="lg:w-1/3">
             <div className="lg:sticky lg:top-32">
-              <div className="w-16 group-hover:w-24 transition-all duration-700 ease-out h-1.5 bg-gradient-to-r from-jmde-orange to-[#ff8c5a] rounded-full mb-6 mx-auto lg:mx-0"></div>
+              <div className="w-16 group-hover:w-24 transition-all duration-700 ease-out h-1.5 bg-gradient-to-r from-[#F36B21] to-[#ff8c5a] rounded-full mb-6 mx-auto lg:mx-0"></div>
 
-              <h2 className="text-4xl md:text-5xl lg:text-5xl font-black text-jmde-blue leading-[1.1] tracking-tight relative z-10 mb-4">
+              <h2 className="text-4xl md:text-5xl lg:text-5xl font-black text-[#123D82] leading-[1.1] tracking-tight relative z-10 mb-4">
                 Why <br className="hidden lg:block" /> Choose US?
               </h2>
-              {/* <p className="text-lg text-gray-500 font-medium max-w-sm">
-                We don't just execute projects; we engineer reliability. Here is
-                why industry leaders trust us with their most critical assets.
-              </p> */}
             </div>
           </div>
 

@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { IoLocationOutline } from "react-icons/io5";
 
 export default function OngoingProjects() {
   const [showAll, setShowAll] = useState(false);
@@ -11,7 +12,7 @@ export default function OngoingProjects() {
       location: "Industrial Zone, Plant A",
       status: "In Progress",
       progress: 60,
-      image: "/images/ongoing-1.jpg",
+      image: "/projects/1.jpeg",
     },
     {
       id: 2,
@@ -19,7 +20,7 @@ export default function OngoingProjects() {
       location: "Main Refinery Hub",
       status: "Active Execution",
       progress: 42,
-      image: "/images/ongoing-2.jpg",
+      image: "/projects/2.jpeg",
     },
     {
       id: 3,
@@ -27,7 +28,7 @@ export default function OngoingProjects() {
       location: "Power Plant Unit 3",
       status: "Erection Phase",
       progress: 85,
-      image: "/images/ongoing-3.jpg",
+      image: "/projects/7.jpeg",
     },
     {
       id: 4,
@@ -35,7 +36,7 @@ export default function OngoingProjects() {
       location: "Chemical Sector 4",
       status: "Initial Phase",
       progress: 15,
-      image: "/images/project-mechanical.jpg",
+      image: "/projects/5.jpeg",
     },
     {
       id: 5,
@@ -43,7 +44,7 @@ export default function OngoingProjects() {
       location: "North Wing Storage",
       status: "In Progress",
       progress: 55,
-      image: "/images/project-wrapping.jpg",
+      image: "/projects/6.jpeg",
     },
     {
       id: 6,
@@ -51,7 +52,7 @@ export default function OngoingProjects() {
       location: "East Depot",
       status: "Final Inspection",
       progress: 92,
-      image: "/images/project-blasting.jpg",
+      image: "/projects/4.jpeg",
     },
     {
       id: 7,
@@ -59,7 +60,7 @@ export default function OngoingProjects() {
       location: "Petrochemical Plant",
       status: "Active Execution",
       progress: 34,
-      image: "/images/project-insulation.jpg",
+      image: "/projects/3.jpeg",
     },
     {
       id: 8,
@@ -67,7 +68,7 @@ export default function OngoingProjects() {
       location: "New Manufacturing Wing",
       status: "Curing Phase",
       progress: 78,
-      image: "/images/project-civil.jpg",
+      image: "/projects/2.jpeg",
     },
     {
       id: 9,
@@ -75,7 +76,7 @@ export default function OngoingProjects() {
       location: "Unit 2 Cooling Towers",
       status: "In Progress",
       progress: 45,
-      image: "/images/project-scaffolding.jpg",
+      image: "/projects/1.jpeg",
     },
   ];
 
@@ -141,19 +142,7 @@ export default function OngoingProjects() {
               {/* Text Content */}
               <div className="flex flex-col flex-grow px-2">
                 <div className="flex items-center gap-1.5 text-[10px] font-mono font-bold tracking-widest text-gray-400 uppercase mb-3">
-                  <svg
-                    className="w-3.5 h-3.5 text-jmde-orange"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                    />
-                  </svg>
+                  <IoLocationOutline className="w-3.5 h-3.5 mr-1.5 text-jmde-orange flex-shrink-0" />
                   <span className="truncate">{project.location}</span>
                 </div>
 

@@ -1,13 +1,23 @@
 "use client";
 import { useState, useEffect } from "react";
+import { MdEmail } from "react-icons/md";
+import { GiRotaryPhone } from "react-icons/gi";
 import Link from "next/link";
-import { link } from "fs";
+
+const navLinks = [
+  { name: "Home", href: "/" },
+  { name: "About Us", href: "/about" },
+  { name: "Services", href: "/services" },
+  { name: "Projects", href: "/projects" },
+  { name: "Clients", href: "/clients" },
+  { name: "Contact Us", href: "/contact" },
+];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // NEW: State to track if the navbar should be visible or hidden
+  // State to track if the navbar should be visible or hidden
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
@@ -65,10 +75,48 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-500 ease-in-out ${navBgClass} ${
-        // NEW: Glides the navbar out of view (-100% of its height) when hidden
+        // Glides the navbar out of view (-100% of its height) when hidden
         showHeader ? "translate-y-0" : "-translate-y-full"
       }`}
     >
+      {/* =========================================
+          TOP CONTACT BAR (HIDDEN ON MOBILE)
+      ========================================== */}
+      <div
+        className={`hidden lg:block w-full border-b transition-colors duration-500 ${isSolid ? "border-jmde-border" : "border-white/10"}`}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-1.5 text-[9.5px] tracking-widest">
+          <a
+            href="mailto:jaimatadienterprises020@gmail.com"
+            className={`flex items-center gap-2 transition-colors ${isSolid ? "text-jmde-text hover:text-jmde-orange" : "text-white/80 hover:text-white"}`}
+          >
+            <MdEmail className="w-3.5 h-3.5 text-jmde-orange" />
+            jaimatadienterprises020@gmail.com
+          </a>
+
+          <div className="flex items-center gap-6">
+            <a
+              href="tel:+919557905990"
+              className={`flex items-center gap-2 transition-colors ${isSolid ? "text-jmde-text hover:text-jmde-orange" : "text-white/80 hover:text-white"}`}
+            >
+              <GiRotaryPhone className="w-4 h-4 text-jmde-orange" />
+              +91 9557905990 | +91 7351905990
+            </a>
+            {/* <span
+              className={`opacity-30 ${isSolid ? "text-jmde-text" : "text-white/80"}`}
+            >
+              |
+            </span>
+            <a
+              href="tel:+917351905990"
+              className={`transition-colors ${isSolid ? "text-jmde-text hover:text-jmde-orange" : "text-white/80 hover:text-white"}`}
+            >
+              +91 7351905990
+            </a> */}
+          </div>
+        </div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
           className={`flex justify-between items-center transition-all duration-500 ease-in-out ${headerHeightClass}`}
@@ -131,36 +179,59 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Navigation Dropdown */}
+      {/* =========================================
+          UPDATED: FULL-SCREEN MOBILE NAVIGATION
+      ========================================== */}
       <div
-        className={`lg:hidden bg-white border-t border-jmde-border shadow-lg overflow-hidden transition-all duration-300 ease-in-out ${
-          isOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
+        className={`lg:hidden fixed inset-0 h-screen w-full bg-[#F8F9FB] flex flex-col transition-all duration-300 ease-in-out -z-10 ${
+          isOpen
+            ? "opacity-100 visible"
+            : "opacity-0 invisible pointer-events-none"
         }`}
       >
-        <div className="px-4 pt-2 pb-6 space-y-1">
+        {/* Spacer to push content exactly below the Logo & Cross Icon section */}
+        <div className={`${headerHeightClass} w-full shrink-0`}></div>
+
+        {/* 1. Divider just after the logo and cross icon section (Not full width, Orange) */}
+        <div className="w-full flex justify-center mb-10">
+          <div className="w-full h-[2px] bg-gradient-to-r from-jmde-orange to-[#ff8c5a] rounded-full"></div>
+        </div>
+
+        {/* Navigation Links */}
+        <div className="flex flex-col items-center justify-center flex-grow w-full px-6 pb-6 overflow-y-auto">
           {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="block px-3 py-3 text-base font-semibold text-jmde-text hover:bg-jmde-sectionLight hover:text-jmde-orange rounded-md transition-colors"
-              onClick={() => setIsOpen(false)}
-            >
-              {link.name}
-            </Link>
+            <div key={link.name} className="flex flex-col items-center w-full">
+              <Link
+                href={link.href}
+                className="text-xl font-black text-jmde-blue hover:text-jmde-orange transition-colors tracking-wide py-5"
+                onClick={() => setIsOpen(false)}
+              >
+                {link.name}
+              </Link>
+
+              {/* 2. Divider after every navlink (Not full width, Orange) */}
+              <div className="w-8 h-[2px] bg-gradient-to-r from-jmde-orange to-[#ff8c5a]  rounded-full"></div>
+            </div>
           ))}
+
+          <div className="mt-10 flex flex-col items-center gap-4 text-center">
+            <a
+              href="tel:+919557905990"
+              className="flex items-center gap-2 text-[13px] font-bold tracking-widest text-gray-500"
+            >
+              <GiRotaryPhone className="w-5.5 h-5.5 text-jmde-orange" />
+              +91 9557905990 / 7351905990
+            </a>
+            <a
+              href="mailto:jaimatadienterprises020@gmail.com"
+              className="flex items-center gap-2 text-[13px] font-bold tracking-widest text-gray-500"
+            >
+              <MdEmail className="w-4.5 h-4.5 text-jmde-orange" />
+              jaimatadienterprises020@gmail.com
+            </a>
+          </div>
         </div>
       </div>
     </header>
   );
 }
-
-// Ensure you leave your existing navLinks array definition outside or inside the component as you had it previously. I removed it here just to keep the snippet focused on the logic changes, but you need it for the code to run!
-const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "About Us", href: "/about" },
-  { name: "Services", href: "/services" },
-  { name: "Projects", href: "/projects" },
-  { name: "Clients", href: "/clients" },
-  // { name: "Gallery", href: "#gallery" },
-  { name: "Contact Us", href: "contact" },
-];
