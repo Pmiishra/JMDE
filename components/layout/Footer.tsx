@@ -234,7 +234,7 @@ export default function Footer() {
               <li className="text-sm text-slate-700 flex justify-between items-center font-medium pb-0">
                 <span>Mon - Sat:</span>
                 <span className="text-jmde-blue font-semibold">
-                  08:00 AM - 06:00 PM
+                  09:00 AM - 06:00 PM
                 </span>
               </li>
               <li className="text-sm text-slate-700 flex justify-between  pb-4 items-center font-medium">
