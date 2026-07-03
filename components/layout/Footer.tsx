@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+import { FaLinkedin } from "react-icons/fa";
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -37,7 +37,7 @@ export default function Footer() {
             <div className="flex gap-3">
               {/* Facebook */}
               <a
-                href="#"
+                // href="#"
                 className="w-10 h-10 rounded-full hover:bg-slate-50 border hover:border-slate-200 flex items-center justify-center hover:text-jmde-blue bg-jmde-orange/80 text-white border-jmde-orange/80 transition-colors duration-300"
                 aria-label="Facebook"
               >
@@ -51,7 +51,7 @@ export default function Footer() {
               </a>
               {/* Twitter / X */}
               <a
-                href="#"
+                // href="#"
                 className="w-10 h-10 rounded-full hover:bg-slate-50 border hover:border-slate-200 flex items-center justify-center hover:text-jmde-blue bg-jmde-orange/80 text-white border-jmde-orange/80 transition-colors duration-300"
                 aria-label="Twitter"
               >
@@ -65,7 +65,7 @@ export default function Footer() {
               </a>
               {/* Instagram */}
               <a
-                href="#"
+                // href="#"
                 className="w-10 h-10 rounded-full hover:bg-slate-50 border hover:border-slate-200 flex items-center justify-center hover:text-jmde-blue bg-jmde-orange/80 text-white border-jmde-orange/80 transition-colors duration-300"
                 aria-label="Instagram"
               >
@@ -83,20 +83,16 @@ export default function Footer() {
                   <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                 </svg>
               </a>
-              {/* YouTube */}
-              {/* <a
-                href="#"
+              {/* Likendin */}
+              <a
+                href="https://www.linkedin.com/in/jai-mata-di-enterprises-2462a6417"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full hover:bg-slate-50 border hover:border-slate-200 flex items-center justify-center hover:text-jmde-blue bg-jmde-orange/80 text-white border-jmde-orange/80 transition-colors duration-300"
                 aria-label="YouTube"
               >
-                <svg
-                  className="w-4 h-4"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                </svg>
-              </a> */}
+                <FaLinkedin className="w-4 h-4" />
+              </a>
             </div>
           </div>
 
@@ -120,7 +116,7 @@ export default function Footer() {
               ].map((item) => (
                 <li key={item}>
                   <Link
-                    href={`/${item.toLowerCase()}`}
+                    href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
                     className="group flex items-center text-center text-sm text-slate-700 hover:text-slate-900 font-semibold transition-colors duration-200"
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-slate-700 mr-3 group-hover:bg-slate-900 transition-colors"></span>

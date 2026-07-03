@@ -1,5 +1,6 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { IoLocationOutline } from "react-icons/io5";
 import Link from "next/link";
 
@@ -15,16 +16,16 @@ export default function FeaturedProjects() {
       id: "01",
       title: "Indian Oil Corporation",
       location: "Panipat Marketing Complex",
-      category: "2013-14",
-      image: "/projects/1.jpeg",
+      category: "2016-17",
+      image: "/projects/pipeline.jpeg",
       headline: "Contracted by: Anuj Engineering Company",
       desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
     },
     {
       id: "02",
       title: "Bharat Petroleum",
-      location: "Top Khodi, Haryana",
-      category: "2013-14",
+      location: "Top Rewari, Haryana",
+      category: "2016-17",
       image: "/projects/2.jpeg",
       headline: "Contracted by: Balaji Enterprises",
       desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
@@ -33,8 +34,8 @@ export default function FeaturedProjects() {
       id: "03",
       title: "Bharat Petroleum",
       location: "Bijwasan Installation, Delhi",
-      category: "2014-15",
-      image: "/projects/3.jpeg",
+      category: "2016-17",
+      image: "/projects/tank.jpeg",
       headline: "Contracted by: Dee Gee Saw & Metal Work (P) Ltd.",
       desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
     },
@@ -42,7 +43,7 @@ export default function FeaturedProjects() {
       id: "04",
       title: "Bharat Petroleum",
       location: "Jaipur Pipeline Terminal",
-      category: "2014-15",
+      category: "2016-17",
       image: "/projects/4.jpeg",
       headline: "Contracted by: Civtect(I) Pvt. Ltd",
       desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
@@ -51,16 +52,16 @@ export default function FeaturedProjects() {
       id: "05",
       title: "Bharat Petroleum",
       location: "BPCL Mathura Depot",
-      category: "2014-15",
+      category: "2016-17",
       image: "/projects/5.jpeg",
-      headline: "Contracted by: Techno Fac Contracts Pvt. Ltd",
+      headline: "Contracted by: Times project",
       desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
     },
     {
       id: "06",
       title: "Bharat Petroleum",
       location: "Panipat",
-      category: "2015-16",
+      category: "2016-17",
       image: "/projects/6.jpeg",
       headline: "Contracted by: Petro India & Engg. Co.",
       desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
@@ -77,9 +78,9 @@ export default function FeaturedProjects() {
     {
       id: "08",
       title: "Bharat Petroleum",
-      location: "Mathura",
+      location: "Bina Dispatch Terminal",
       category: "2016-17",
-      image: "/projects/1.jpeg",
+      image: "/projects/8.jpeg",
       headline: "Contracted by: Dee Gee Saw & Metal Work (P) Ltd.",
       desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
     },
@@ -88,7 +89,7 @@ export default function FeaturedProjects() {
       title: "Hindustan Petroleum",
       location: "Nalagarh, Himachal Pradesh",
       category: "2017-18",
-      image: "/projects/2.jpeg",
+      image: "/projects/9.jpeg",
       headline: "Contracted by: Blue Star Engineering Company",
       desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
     },
@@ -97,11 +98,378 @@ export default function FeaturedProjects() {
       title: "Bharat Petroleum",
       location: "Sidhpur Depot, Gujarat",
       category: "2017-18",
-      image: "/projects/3.jpeg",
+      image: "/projects/10.jpeg",
       headline: "Contracted by: Dee Gee Saw & Metal Work (P) Ltd.",
       desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
     },
+    // {
+    //   id: "11",
+    //   title: "Indian Oil Corporation",
+    //   location: "IOCL Refinery Panipat",
+    //   category: "2018-19",
+    //   image: "/projects/11.jpeg",
+    //   headline: "Contracted by: M/S Vinod Kumar",
+    //   desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
+    // },
+    // {
+    //   id: "12",
+    //   title: "Indian Oil Corporation",
+    //   location: "Sagar",
+    //   category: "2018-19",
+    //   image: "/projects/12.jpeg",
+    //   headline: "Contracted by: Perfect Construction Co.",
+    //   desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
+    // },
+    // {
+    //   id: "13",
+    //   title: "Hindustan Petroleum",
+    //   location: "IRD Sagar, Madhya Pradesh",
+    //   category: "2018-19",
+    //   image: "/projects/13.jpeg",
+    //   headline: "Contracted by: Dee Gee Saw & Metal Work (P) Ltd.",
+    //   desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
+    // },
+    // {
+    //   id: "14",
+    //   title: "Bharat Petroleum",
+    //   location: "Rairu Depot, Gwalior (M.P)",
+    //   category: "2019-20",
+    //   image: "/projects/14.jpeg",
+    //   headline: "Contracted by: Dee Gee Saw & Metal Work (P) Ltd.",
+    //   desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
+    // },
+    // {
+    //   id: "15",
+    //   title: "Bharat Petroleum",
+    //   location: "Bina Terminal",
+    //   category: "2019-20",
+    //   image: "/projects/15.jpeg",
+    //   headline: "Contracted by: Dee Gee Saw & Metal Work (P) Ltd.",
+    //   desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
+    // },
+    // {
+    //   id: "15",
+    //   title: "Bharat Petroleum",
+    //   location: "BPCL Bina, Madhya Pradesh",
+    //   category: "2019-20",
+    //   image: "/projects/16.jpeg",
+    //   headline: "Contracted by: Essdee Projects Engineering Pvt. Ltd.",
+    //   desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
+    // },
+    // {
+    //   id: "16",
+    //   title: "Bharat Petroleum",
+    //   location: "Bina",
+    //   category: "2020-21",
+    //   image: "/projects/17.jpeg",
+    //   headline: "Contracted by: R.K Enterprises",
+    //   desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
+    // },
+    // {
+    //   id: "18",
+    //   title: "Bharat Petroleum",
+    //   location: "Mathura Refinery",
+    //   category: "2020-21",
+    //   image: "/projects/18.jpeg",
+    //   headline: "Contracted by: Times Projects",
+    //   desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
+    // },
+    // {
+    //   id: "19",
+    //   title: "Bharat Petroleum",
+    //   location: "Mathura Refinery",
+    //   category: "2020-21",
+    //   image: "/projects/19.jpeg",
+    //   headline: "Contracted by: Times Projects",
+    //   desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
+    // },
+    // {
+    //   id: "17",
+    //   title: "Indian Oil Corporation",
+    //   location: "Yadamari Vill, Chitoor",
+    //   category: "2021-22",
+    //   image: "/projects/21.jpeg",
+    //   headline: "Contracted by: Indian Oil Corporation Pvt. Ltd.",
+    //   desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
+    // },
+    // {
+    //   id: "18",
+    //   title: "Bharat Petroleum",
+    //   location: "Lalru Depot, Punjab",
+    //   category: "2021-22",
+    //   image: "/projects/22.jpeg",
+    //   headline: "Contracted by: Dee Gee Saw & Metal Work (P) Ltd.",
+    //   desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
+    // },
+    // {
+    //   id: "19",
+    //   title: "Bharat Petroleum",
+    //   location: "Koyali Installation, Vadodara",
+    //   category: "2021-22",
+    //   image: "/projects/23.jpeg",
+    //   headline: "Contracted by: Dee Gee Saw & Metal Work (P) Ltd.",
+    //   desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
+    // },
+    // {
+    //   id: "20",
+    //   title: "Hindustan Petroleum",
+    //   location: "Bagru, MDPL Terminal, Jaipur",
+    //   category: "2021-22",
+    //   image: "/projects/24.jpeg",
+    //   headline: "Contracted by: Dee Gee Saw & Metal Work (P) Ltd.",
+    //   desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
+    // },
+    // {
+    //   id: "21",
+    //   title: "Hindustan Petroleum",
+    //   location: "Sitarganj Depot & LPG Bottling Plant",
+    //   category: "2021-22",
+    //   image: "/projects/25.jpeg",
+    //   headline: "Contracted by: Dee Gee Saw & Metal Work (P) Ltd.",
+    //   desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
+    // },
+    // {
+    //   id: "22",
+    //   title: "Hindustan Petroleum",
+    //   location: "Sitarganj Depot & Oil Plant",
+    //   category: "2021-22",
+    //   image: "/projects/26.jpeg",
+    //   headline: "Contracted by: Hindustan Petroleum Corporation Ltd.",
+    //   desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
+    // },
+    // {
+    //   id: "23",
+    //   title: "Bharat Petroleum",
+    //   location: "Bhatinda Depot, Punjab",
+    //   category: "2022-23",
+    //   image: "/projects/27.jpeg",
+    //   headline: "Contracted by: Dee Gee Saw & Metal Work (P) Ltd.",
+    //   desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
+    // },
+    // {
+    //   id: "24",
+    //   title: "Indian Oil Corporation",
+    //   location: "IOCL Pipeline Division WRPL, Viramgam",
+    //   category: "2022-23",
+    //   image: "/projects/28.jpeg",
+    //   headline: "Contracted by: Hari Om Enterprises",
+    //   desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
+    // },
+    // {
+    //   id: "25",
+    //   title: "Bharat Petroleum",
+    //   location: "Krishnapatnam Coastal Installation, Nellore",
+    //   category: "2023-24",
+    //   image: "/projects/29.jpeg",
+    //   headline: "Contracted by: Dee Gee Saw & Metal Work (P) Ltd.",
+    //   desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
+    // },
+    // {
+    //   id: "26",
+    //   title: "Hindustan Petroleum",
+    //   location: "Durgapur IRD, West Bengal",
+    //   category: "2023-24",
+    //   image: "/projects/30.jpeg",
+    //   headline: "Contracted by: JPC Infratech Pvt. Ltd.",
+    //   desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
+    // },
+    // {
+    //   id: "27",
+    //   title: "Indian Oil Corporation",
+    //   location: "WRPL, Viramgam, Ahmedabad",
+    //   category: "2023-24",
+    //   image: "/projects/31.jpeg",
+    //   headline: "Contracted by: Expo Gas Containers Limited",
+    //   desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
+    // },
+    // {
+    //   id: "28",
+    //   title: "Indian Oil Corporation",
+    //   location: "IOCL Haldia Refinery",
+    //   category: "2023-24",
+    //   image: "/projects/32.jpeg",
+    //   headline: "Contracted by: Expo Gas Containers Limited",
+    //   desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
+    // },
+    // {
+    //   id: "29",
+    //   title: "Indian Oil Corporation",
+    //   location: "Orai, Jalaun, U.P",
+    //   category: "2024-25",
+    //   image: "/projects/33.jpeg",
+    //   headline: "Contracted by: Expo Project Engineering Services (P) Ltd.",
+    //   desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
+    // },
+    // {
+    //   id: "30",
+    //   title: "Bharat Petroleum",
+    //   location: "BPCL Mathura Depot",
+    //   category: "2024-25",
+    //   image: "/projects/34.jpeg",
+    //   headline: "Contracted by: Bharat Petroleum Corporation Limited",
+    //   desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
+    // },
+    // {
+    //   id: "31",
+    //   title: "Indian Oil Corporation",
+    //   location: "AFS Gouripur, Birati, Kolkata",
+    //   category: "2024-25",
+    //   image: "/projects/35.jpeg",
+    //   headline: "Contracted by: Expo Gas Containers Limited",
+    //   desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
+    // },
+    // {
+    //   id: "32",
+    //   title: "Indian Oil Corporation",
+    //   location: "IOCL Gujarat Refinery, Vadodara",
+    //   category: "2024-25",
+    //   image: "/projects/36.jpeg",
+    //   headline: "Contracted by: Expo Gas Containers Limited",
+    //   desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
+    // },
+    // {
+    //   id: "33",
+    //   title: "Indian Oil Corporation",
+    //   location: "IOCL, Dahod, Gujarat",
+    //   category: "2024-25",
+    //   image: "/projects/37.jpeg",
+    //   headline: "Contracted by: Expo Project Engineering Services (P) Ltd.",
+    //   desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
+    // },
+    // {
+    //   id: "38",
+    //   title: "Indian Oil Corporation",
+    //   location: "Uttar Pradesh Projects",
+    //   category: "2024-25",
+    //   image: "/projects/38.jpeg",
+    //   headline: "Contracted by: Dee Gee Saw & Metal Work (P) Ltd.",
+    //   desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
+    // },
+    // {
+    //   id: "34",
+    //   title: "Bharat Petroleum",
+    //   location: "Hazira Depot, Surat",
+    //   category: "2024-25",
+    //   image: "/projects/39.jpeg",
+    //   headline: "Contracted by: Dee Gee Saw & Metal Work (P) Ltd.",
+    //   desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
+    // },
+    // {
+    //   id: "35",
+    //   title: "Matrix Fertilisers & Chemicals",
+    //   location: "Panagarh, West Bengal",
+    //   category: "2024-25",
+    //   image: "/projects/40.jpeg",
+    //   headline: "Contracted by: Expo Project Engineering Services (P) Ltd.",
+    //   desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
+    // },
+    // {
+    //   id: "36",
+    //   title: "Indian Oil Corporation",
+    //   location: "Malkapur, Telangana",
+    //   category: "2024-25",
+    //   image: "/projects/41.jpeg",
+    //   headline: "Contracted by: Dee Gee Saw & Metal Work (P) Ltd.",
+    //   desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
+    // },
+    // {
+    //   id: "42",
+    //   title: "Matrix Fertilisers & Chemicals",
+    //   location: "Panagarh, West Bengal",
+    //   category: "2024-25",
+    //   image: "/projects/42.jpeg",
+    //   headline: "Contracted by: Expo Project Engineering Services (P) Ltd.",
+    //   desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
+    // },
+    // {
+    //   id: "37",
+    //   title: "Indian Oil Corporation",
+    //   location: "Unchahar, Uttar Pradesh",
+    //   category: "2024-25",
+    //   image: "/projects/43.jpeg",
+    //   headline: "Contracted by: Dee Gee Saw & Metal Work (P) Ltd.",
+    //   desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
+    // },
+    // {
+    //   id: "38",
+    //   title: "Indian Oil Corporation",
+    //   location: "Sehore, Madhya Pradesh",
+    //   category: "2024-25",
+    //   image: "/projects/44.jpeg",
+    //   headline: "Contracted by: Dee Gee Saw & Metal Work (P) Ltd.",
+    //   desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
+    // },
+    // {
+    //   id: "39",
+    //   title: "Hindustan Petroleum",
+    //   location: "Pachpadra, Rajasthan",
+    //   category: "2024-25",
+    //   image: "/projects/45.jpeg",
+    //   headline: "Contracted by: DE,S Technico Limited",
+    //   desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
+    // },
+    // {
+    //   id: "40",
+    //   title: "Hindustan Petroleum",
+    //   location: "Pachpadra,Balotra, Rajasthan",
+    //   category: "2024-25",
+    //   image: "/projects/46.jpeg",
+    //   headline: "Contracted by: Dee Gee Saw & Metal Work (P) Ltd.",
+    //   desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
+    // },
+    // {
+    //   id: "41",
+    //   title: "Bharat Petroleum",
+    //   location: "Mysuru Installation, Karnataka",
+    //   category: "2024-25",
+    //   image: "/projects/47.jpeg",
+    //   headline: "Contracted by: Expo Gas Containers Limited",
+    //   desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
+    // },
+    // {
+    //   id: "42",
+    //   title: "Indian Oil Corporation",
+    //   location: "Chaksu, Jaipur",
+    //   category: "2025-26",
+    //   image: "/projects/48.jpeg",
+    //   headline: "Contracted by: Expo Gas Containers Limited",
+    //   desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
+    // },
+    // {
+    //   id: "43",
+    //   title: "Indian Oil Corporation",
+    //   location: "Khirai, Gujarat",
+    //   category: "2025-26",
+    //   image: "/projects/49.jpeg",
+    //   headline: "Contracted by: Expo Project Engineering Services (P) Ltd.",
+    //   desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
+    // },
+    // {
+    //   id: "50",
+    //   title: "Hindustan Petroleum",
+    //   location: "Pachpadra, Balotra, Rajasthan",
+    //   category: "2025-26",
+    //   image: "/projects/50.jpeg",
+    //   headline: "Contracted by: Dee Gee Saw & Metal Work (P) Ltd.",
+    //   desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
+    // },
+    // {
+    //   id: "44",
+    //   title: "Bharat Petroleum",
+    //   location: "Devangonthi Installation, Kolkata",
+    //   category: "2025-26",
+    //   image: "/projects/51.jpeg",
+    //   headline: "Contracted by: Expo Gas Containers Limited",
+    //   desc: "Project details, technical specifications, and execution parameters will be updated here in the future. 50+ Projects Completed Across Industrial Sectors",
+    // },
   ];
+
+  const router = useRouter();
+
+  const handleClick = () => {
+    sessionStorage.setItem("scrollToProjects", "true");
+    router.push("/projects");
+  };
 
   const scrollToCard = (index: number) => {
     if (mobileCarouselRef.current) {
@@ -206,12 +574,12 @@ export default function FeaturedProjects() {
               Completed Projects
             </h2>
             <p className="text-lg text-gray-500 font-medium">
-              50+ Projects Completed Across Industrial Sectors.
+              43+ Projects Completed Across Industrial Sectors.
             </p>
           </div>
           <div className="shrink-0 hidden md:block">
-            <Link
-              href="#all-projects"
+            <button
+              onClick={handleClick}
               className="relative inline-flex items-center gap-3 bg-white border-2 border-jmde-blue text-jmde-blue px-10 py-4 rounded-xl font-bold text-lg overflow-hidden transition-all duration-300 hover:shadow-[0_10px_20px_rgba(28,49,84,0.15)] z-10 group"
             >
               <span className="absolute inset-0 bg-jmde-blue -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out -z-10"></span>
@@ -232,7 +600,7 @@ export default function FeaturedProjects() {
                   d="M14 5l7 7m0 0l-7 7m7-7H3"
                 ></path>
               </svg>
-            </Link>
+            </button>
           </div>
         </div>
 
@@ -241,7 +609,7 @@ export default function FeaturedProjects() {
         ========================================== */}
         <div className="md:hidden text-center mb-8 px-1">
           <Link
-            href="#all-projects"
+            href="/projects#all-projects"
             className="inline-flex items-center justify-center border-2 border-jmde-blue text-jmde-blue bg-white hover:bg-jmde-orange hover:border-jmde-orange hover:text-white py-3.5 rounded-xl font-bold text-base transition-all duration-300 px-10 gap-3 group"
           >
             View All Projects
@@ -262,7 +630,7 @@ export default function FeaturedProjects() {
         </div>
 
         {/* MAIN LAYOUT WRAPPER */}
-        <div className="flex flex-col lg:flex-row w-full gap-8 xl:gap-12 items-start justify-center">
+        <div className="flex flex-col lg:flex-row w-full gap-8 xl:gap-12 justify-center items-center">
           {/* =========================================
               LEFT BLOCK: Navigation Control Pillar
           ========================================== */}
@@ -385,7 +753,7 @@ export default function FeaturedProjects() {
                   </div>
 
                   {/* Learn More Button */}
-                  <div className="pt-4">
+                  {/* <div className="pt-4">
                     <Link
                       href="#all-projects"
                       className="inline-flex items-center gap-2.5 text-xs font-black tracking-widest text-jmde-orange uppercase hover:text-[#E06612] group/lnk transition-colors duration-200"
@@ -405,7 +773,7 @@ export default function FeaturedProjects() {
                         />
                       </svg>
                     </Link>
-                  </div>
+                  </div> */}
                 </div>
 
                 <div className="md:col-span-6 order-1 md:order-2">

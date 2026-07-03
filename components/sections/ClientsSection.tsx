@@ -78,7 +78,7 @@ export default function ClientsSection() {
     {
       id: "civtect",
       name: "Civtect (I) Pvt. Ltd",
-      logo: "/clients/civtectindia_logo.jpg",
+      logo: "/clients/civtectindia_logo.png",
       width: 200,
       height: 140,
     },

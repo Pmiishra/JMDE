@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
+
 import Link from "next/link";
 
 // --- ANIMATION HELPERS ---
@@ -210,8 +211,8 @@ export default function AboutPage() {
                 year: "2021-23",
                 title: "Scaled Across Multiple Infrastructure Sectors",
               },
-              { year: "2024", title: "Crossed 50+ Major Projects Delivered" },
-              { year: "Today", title: "18+ Active Clients & 9+ Ongoing Sites" },
+              { year: "2024", title: "Crossed 43+ Major Projects Delivered" },
+              { year: "Today", title: "17+ Active Clients & 8+ Ongoing Sites" },
             ].map((item, index) => {
               const isLeft = index % 2 === 0;
 
@@ -405,13 +406,13 @@ export default function AboutPage() {
               },
             ].map((member, idx) => (
               <FadeIn key={idx} delay={idx * 100}>
-                <div className="relative group p-4 rounded-3xl bg-[#F8F9FB] transition-colors duration-500 flex flex-col items-center object-center text-center">
+                <div className="relative group px-4 py-8 rounded-3xl bg-[#F8F9FB] transition-colors duration-500 flex flex-col items-center object-center text-center">
                   {/* Image Frame */}
                   <div className="relative w-32 h-32 mb-6">
                     <img
                       src={member.img}
                       alt={member.name}
-                      className="w-full h-full rounded-full object-cover border-4 border-white shadow-lg group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full rounded-3xl object-cover border-4 border-white group-hover:scale-105 transition-transform duration-500"
                       onError={(e) => {
                         (e.target as HTMLImageElement).src =
                           "/images/team/placeholder.jpg";
