@@ -834,7 +834,7 @@ export default function ProjectsPage() {
                       </div>
 
                       {/* Animated Description Section */}
-                      <div className="flex-grow">
+                      {/* <div className="flex-grow">
                         <div
                           ref={contentRef}
                           className="overflow-hidden transition-all duration-500 ease-in-out"
@@ -868,7 +868,7 @@ export default function ProjectsPage() {
                             />
                           </svg>
                         </button>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 );
