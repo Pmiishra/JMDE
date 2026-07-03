@@ -28,7 +28,7 @@ export default function ContactCTA() {
         {/* CHANGED: Removed the second button and centered the primary Contact Us button */}
         <div className="flex justify-center">
           <Link
-            href="#contact"
+            href="/contact"
             className="relative inline-flex items-center justify-center gap-3 border-2 group-hover:border-jmde-orange border-white text-white px-14 py-3 rounded-full font-bold text-lg overflow-hidden transition-all duration-300 hover:shadow-[0_10px_20px_rgba(28,49,84,0.15)]  z-10"
           >
             <span className="absolute inset-0 bg-jmde-orange -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out -z-10"></span>

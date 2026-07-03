@@ -8,75 +8,75 @@ export default function OngoingProjects() {
   const ongoing = [
     {
       id: 1,
-      title: "Phase 2 Mechanical Expansion",
+      title: "Insulation",
       location: "Industrial Zone, Plant A",
       status: "In Progress",
       progress: 60,
-      image: "/projects/1.jpeg",
+      image: "/projects/ongoing/1.jpeg",
     },
     {
       id: 2,
       title: "Plant-wide Industrial Painting",
       location: "Main Refinery Hub",
-      status: "Active Execution",
+      status: "In Progress",
       progress: 42,
-      image: "/projects/2.jpeg",
+      image: "/projects/ongoing/2.jpeg",
     },
     {
       id: 3,
       title: "Heavy Support Scaffolding",
       location: "Power Plant Unit 3",
-      status: "Erection Phase",
+      status: "In Progress",
       progress: 85,
-      image: "/projects/7.jpeg",
+      image: "/projects/ongoing/3.jpeg",
     },
     {
       id: 4,
-      title: "Structural Framework Welding",
+      title: "Civil Work",
       location: "Chemical Sector 4",
-      status: "Initial Phase",
+      status: "In Progress",
       progress: 15,
-      image: "/projects/5.jpeg",
+      image: "/projects/ongoing/4.jpeg",
     },
     {
       id: 5,
-      title: "Pipeline Anti-Corrosion Setup",
+      title: "Tank Blasting & Painting Work",
       location: "North Wing Storage",
       status: "In Progress",
       progress: 55,
-      image: "/projects/6.jpeg",
+      image: "/projects/ongoing/5.jpeg",
     },
     {
       id: 6,
-      title: "Containment Tank Blasting",
+      title: "Painting Work",
       location: "East Depot",
-      status: "Final Inspection",
+      status: "In Progress",
       progress: 92,
-      image: "/projects/4.jpeg",
+      image: "/projects/ongoing/6.jpeg",
     },
     {
       id: 7,
-      title: "Thermal Insulation Wrapping",
+      title: "Wrapping & Coating",
       location: "Petrochemical Plant",
-      status: "Active Execution",
+      status: "In Progress",
       progress: 34,
-      image: "/projects/3.jpeg",
+      image: "/projects/ongoing/7.jpeg",
     },
     {
       id: 8,
-      title: "Concrete Foundation Pouring",
-      location: "New Manufacturing Wing",
-      status: "Curing Phase",
+      title: "Insulation Work",
+      location: "Vadodara",
+      status: "In Progress",
       progress: 78,
-      image: "/projects/2.jpeg",
+      image: "/projects/ongoing/8.jpeg",
     },
     {
       id: 9,
-      title: "High-Altitude Rigging",
+      title: "Tank Logo Work",
       location: "Unit 2 Cooling Towers",
       status: "In Progress",
       progress: 45,
-      image: "/projects/1.jpeg",
+      image: "/projects/ongoing/9.jpeg",
     },
   ];
 
@@ -151,7 +151,7 @@ export default function OngoingProjects() {
                 </h3>
 
                 {/* Progress Bar Section */}
-                <div className="mt-auto pt-6 border-t border-slate-100">
+                {/* <div className="mt-auto pt-6 border-t border-slate-100">
                   <div className="flex justify-between items-end mb-2.5">
                     <span className="text-[11px] font-bold font-mono text-gray-400 tracking-wider">
                       EXECUTION PROGRESS
@@ -161,15 +161,15 @@ export default function OngoingProjects() {
                     </span>
                   </div>
 
-                  {/* Track */}
+                 
                   <div className="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
-                    {/* Fill Line */}
+                    
                     <div
                       className="h-full bg-jmde-blue rounded-full transition-all duration-1000 ease-out"
                       style={{ width: `${project.progress}%` }}
                     />
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           ))}

@@ -152,7 +152,7 @@ export default function AboutUsSection() {
             </p>
 
             <Link
-              href="#about"
+              href="/about"
               className="relative inline-flex items-center justify-center gap-3 bg-white border-2 border-jmde-blue text-jmde-blue px-8 py-3.5 rounded-xl font-bold text-lg overflow-hidden transition-all duration-300 hover:shadow-[0_10px_20px_rgba(28,49,84,0.15)] hover:-translate-y-1 z-10"
             >
               <span className="absolute inset-0 bg-jmde-blue -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out -z-10"></span>

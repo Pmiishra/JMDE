@@ -446,12 +446,12 @@ export default function ContactPage() {
 
                 {/* Submit Button */}
                 <Link
-                  href="#all-services"
+                  href="/"
                   className="relative mt-10 inline-flex items-center gap-3 bg-white border-2 border-jmde-blue text-jmde-blue px-10 py-4 rounded-xl font-bold text-lg overflow-hidden transition-all duration-300 hover:shadow-[0_10px_20px_rgba(28,49,84,0.15)] z-10 group"
                 >
                   <span className="absolute inset-0 bg-jmde-blue -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out -z-10"></span>
                   <span className="group-hover:text-white text-sm md:text-lg transition-colors duration-300">
-                    View All Services
+                    Submit
                   </span>
                   <svg
                     className="w-5 h-5 text-jmde-blue group-hover:text-white transform transition-all duration-300 group-hover:translate-x-1"
