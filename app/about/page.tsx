@@ -88,6 +88,53 @@ const AnimatedCounter = ({
   );
 };
 
+const timeline = [
+  {
+    year: "2016",
+    title: "Company Established & Mobilized",
+  },
+  {
+    year: "2017-18",
+    title: "Expanded Industrial Service Portfolio",
+  },
+  {
+    year: "2018-19",
+    title: "Secured Refinery & Industrial Contracts",
+  },
+  {
+    year: "2019-20",
+    title: "Strengthened Workforce & Safety",
+  },
+  {
+    year: "2020-21",
+    title: "Successfully Executed Critical Industrial Shutdown Projects",
+  },
+  {
+    year: "2021-22",
+    title: "Expanded Presence Across Multiple Industrial Sectors",
+  },
+  {
+    year: "2022-23",
+    title: "Enhanced Execution Capacity with Large-Scale Site Operations",
+  },
+  {
+    year: "2023-24",
+    title: "Built Long-Term Partnerships with Leading Industry Clients",
+  },
+  {
+    year: "2024-25",
+    title: "Crossed 30+ Major Projects Delivered",
+  },
+  {
+    year: "2025-26",
+    title: "Continuing Large-Scale Industrial Projects Across India",
+  },
+  {
+    year: "Today",
+    title: "43+ Projects • 8+ Ongoing Sites",
+  },
+];
+
 // --- MAIN PAGE COMPONENT ---
 
 export default function AboutPage() {
@@ -197,68 +244,52 @@ export default function AboutPage() {
             {/* The Glowing Central Orange Pipeline */}
             <div className="absolute left-[36px] md:left-1/2 top-0 bottom-0 w-[3px] bg-gradient-to-b from-transparent via-[#F36B21] to-transparent transform md:-translate-x-1/2 shadow-[0_0_15px_rgba(243,107,33,0.4)]"></div>
 
-            {[
-              { year: "2016", title: "Company Established & Mobilized" },
-              {
-                year: "2017-18",
-                title: "Expanded Industrial Service Portfolio",
-              },
-              {
-                year: "2019-20",
-                title: "Secured Major Refinery & Industrial Contracts",
-              },
-              {
-                year: "2021-23",
-                title: "Scaled Across Multiple Infrastructure Sectors",
-              },
-              { year: "2024", title: "Crossed 43+ Major Projects Delivered" },
-              { year: "Today", title: "17+ Active Clients & 8+ Ongoing Sites" },
-            ].map((item, index) => {
+            {timeline.map((item, index) => {
               const isLeft = index % 2 === 0;
 
               return (
-                <FadeIn key={item.year} delay={index * 100}>
+                <FadeIn key={`${item.year}-${index}`} delay={index * 100}>
                   <div
-                    className={`relative flex items-center mb-12 md:mb-20 group ${
+                    className={`relative flex items-center min-h-[180px] mb-10 md:mb-14 group ${
                       isLeft ? "md:flex-row-reverse" : "md:flex-row"
                     }`}
                   >
-                    {/* Glowing Junction Node */}
-                    <div className="absolute left-[36px] md:left-1/2 w-8 h-8 bg-[#08183A] rounded-full border-[3px] border-white/80 transform -translate-x-1/2 z-20 flex items-center justify-center group-hover:border-[#F36B21] group-hover:scale-125 transition-all duration-300 shadow-lg">
+                    {/* Timeline Node */}
+                    <div className="absolute top-1/2 -translate-y-1/2 left-[36px] md:left-1/2 -translate-x-1/2 w-8 h-8 bg-[#08183A] rounded-full border-[3px] border-white/80 transform -translate-x-1/2 z-20 flex items-center justify-center group-hover:border-[#F36B21] group-hover:scale-125 transition-all duration-300 shadow-lg">
                       <div className="w-2.5 h-2.5 bg-[#F36B21] rounded-full group-hover:shadow-[0_0_12px_#F36B21] transition-all"></div>
                     </div>
 
-                    {/* Steel Connector Tie-Rods (Desktop) */}
+                    {/* Connector */}
                     <div
-                      className={`hidden md:block absolute top-1/2 w-12 h-[2px] bg-white/10 group-hover:bg-[#F36B21]/80 transition-colors duration-300 z-10 ${
-                        isLeft ? "right-1/2 mr-4" : "left-1/2 ml-4"
+                      className={`hidden md:block absolute top-1/2 -translate-y-1/2 w-12 h-[2px] bg-white/10 group-hover:bg-[#F36B21]/80 transition-colors duration-300 z-10 ${
+                        isLeft ? "left-1/2 mr-4" : "right-1/2 ml-4"
                       }`}
-                    ></div>
+                    />
 
-                    {/* Premium Dark Structural Content Card */}
+                    {/* Card */}
                     <div
                       className={`ml-[76px] md:ml-0 w-full md:w-[45%] ${
                         isLeft ? "md:pl-10" : "md:pr-10"
                       }`}
                     >
                       <div
-                        className={`bg-[#0A1A3A] p-4 md:p-6 rounded-[20px] border border-white/5 shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.5)] relative overflow-hidden ${
+                        className={`bg-[#0A1A3A] p-6 rounded-[20px] border border-white/5 shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.5)] relative overflow-hidden ${
                           isLeft ? "md:text-right text-left" : "text-left"
                         }`}
                       >
-                        {/* Subtle Card Inner Glow on Hover */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-[#F36B21]/0 to-[#F36B21]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        {/* Hover Glow */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-[#F36B21]/0 to-[#F36B21]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                        {/* Structural Accent Line */}
+                        {/* Accent Strip */}
                         <div
-                          className={`absolute top-0 bottom-0 w-1.5 bg-gradient-to-b from-[#F36B21] to-[#ff8c5a] opacity-80 transition-all duration-500 ${
+                          className={`absolute top-0 bottom-0 w-1.5 bg-gradient-to-b from-[#F36B21] to-[#ff8c5a] ${
                             isLeft ? "md:right-0 left-0" : "left-0"
                           }`}
-                        ></div>
+                        />
 
-                        {/* Faint Background Watermark Number - Outputs EXACTLY what is in item.year */}
+                        {/* Watermark */}
                         <div
-                          className={`absolute top-1/2 -translate-y-1/2 opacity-5 text-6xl md:text-8xl font-black text-white pointer-events-none select-none whitespace-nowrap transition-transform duration-700 group-hover:scale-110 ${
+                          className={`absolute top-1/2 -translate-y-1/2 opacity-5 text-7xl md:text-8xl font-black pointer-events-none select-none ${
                             isLeft ? "md:left-4 right-4" : "right-4"
                           }`}
                         >
@@ -266,12 +297,12 @@ export default function AboutPage() {
                         </div>
 
                         {/* Year */}
-                        <div className="relative text-4xl md:text-5xl font-black text-white/80 group-hover:text-white font-mono tracking-tighter mb-3 drop-shadow-md">
+                        <div className="relative text-4xl md:text-5xl font-black text-white/80 mb-3 font-mono tracking-tight">
                           {item.year}
                         </div>
 
                         {/* Title */}
-                        <h4 className="relative text-lg md:text-xl font-bold text-white/70 leading-relaxed group-hover:text-white transition-colors duration-300">
+                        <h4 className="relative text-md md:text-lg font-bold text-white/70 leading-relaxed group-hover:text-white transition-colors">
                           {item.title}
                         </h4>
                       </div>
