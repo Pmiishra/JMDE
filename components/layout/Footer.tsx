@@ -37,7 +37,9 @@ export default function Footer() {
             <div className="flex gap-3">
               {/* Facebook */}
               <a
-                // href="#"
+                href="https://www.facebook.com/share/1CwDP1MGub/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full hover:bg-slate-50 border hover:border-slate-200 flex items-center justify-center hover:text-jmde-blue bg-jmde-orange/80 text-white border-jmde-orange/80 transition-colors duration-300"
                 aria-label="Facebook"
               >
@@ -52,6 +54,8 @@ export default function Footer() {
               {/* Twitter / X */}
               <a
                 // href="#"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full hover:bg-slate-50 border hover:border-slate-200 flex items-center justify-center hover:text-jmde-blue bg-jmde-orange/80 text-white border-jmde-orange/80 transition-colors duration-300"
                 aria-label="Twitter"
               >
@@ -66,6 +70,8 @@ export default function Footer() {
               {/* Instagram */}
               <a
                 // href="#"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full hover:bg-slate-50 border hover:border-slate-200 flex items-center justify-center hover:text-jmde-blue bg-jmde-orange/80 text-white border-jmde-orange/80 transition-colors duration-300"
                 aria-label="Instagram"
               >

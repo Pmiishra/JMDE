@@ -85,7 +85,7 @@ export default function Navbar() {
       <div
         className={`hidden lg:block w-full border-b transition-colors duration-500 ${isSolid ? "border-jmde-border" : "border-white/10"}`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-1.5 text-[9.5px] tracking-widest">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-1.5 text-[12px] tracking-widest">
           <a
             href="mailto:jaimatadienterprises020@gmail.com"
             className={`flex items-center gap-2 transition-colors ${isSolid ? "text-jmde-text hover:text-jmde-orange" : "text-white/80 hover:text-white"}`}

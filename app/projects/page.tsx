@@ -550,7 +550,7 @@ export default function ProjectsPage() {
     {
       id: "44",
       title: "Bharat Petroleum",
-      location: "Devangonthi Installation, Kolkata",
+      location: "Devangonthi Installation, Karnataka",
       category: "2025-26",
       image: "/projects/51.jpeg",
       headline: "Contracted by: Expo Gas Containers Limited",
@@ -609,7 +609,7 @@ export default function ProjectsPage() {
     },
     {
       id: 7,
-      title: "Wrapping & Coating",
+      title: "Underground Tank Painting Work",
       location: "Petrochemical Plant",
       status: "In Progress",
       progress: 34,

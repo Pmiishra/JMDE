@@ -56,7 +56,7 @@ export default function OngoingProjects() {
     },
     {
       id: 7,
-      title: "Wrapping & Coating",
+      title: "Underground Tank Painting Work",
       location: "Petrochemical Plant",
       status: "In Progress",
       progress: 34,
