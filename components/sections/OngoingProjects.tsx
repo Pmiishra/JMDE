@@ -78,6 +78,14 @@ export default function OngoingProjects() {
       progress: 45,
       image: "/projects/ongoing/9.jpeg",
     },
+    {
+      id: 10,
+      title: "Blasting & Painting Work",
+      location: "Piyala Site",
+      status: "In Progress",
+      progress: 45,
+      image: "/projects/ongoing/10.jpeg",
+    },
   ];
 
   const displayedProjects = showAll ? ongoing : ongoing.slice(0, 3);

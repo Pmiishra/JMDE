@@ -631,6 +631,14 @@ export default function ProjectsPage() {
       progress: 45,
       image: "/projects/ongoing/9.jpeg",
     },
+    {
+      id: 10,
+      title: "Blasting & Painting Work",
+      location: "Piyala Site",
+      status: "In Progress",
+      progress: 45,
+      image: "/projects/ongoing/10.jpeg",
+    },
   ];
 
   // Dynamically extract unique categories (years) from the data, sorted descending so newest is first
