@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FaLinkedin } from "react-icons/fa";
+import { BsTwitterX } from "react-icons/bs";
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -53,23 +54,17 @@ export default function Footer() {
               </a>
               {/* Twitter / X */}
               <a
-                // href="#"
+                href="https://x.com/MsJaiMataDient"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full hover:bg-slate-50 border hover:border-slate-200 flex items-center justify-center hover:text-jmde-blue bg-jmde-orange/80 text-white border-jmde-orange/80 transition-colors duration-300"
                 aria-label="Twitter"
               >
-                <svg
-                  className="w-4 h-4"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
-                </svg>
+                <BsTwitterX className="w-3 h-3" />
               </a>
               {/* Instagram */}
               <a
-                // href="#"
+                href="https://www.instagram.com/msjaimatadinenterprises?igsh=YzRwZHFkZzhqc2Fl&utm_source=ig_contact_invite"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full hover:bg-slate-50 border hover:border-slate-200 flex items-center justify-center hover:text-jmde-blue bg-jmde-orange/80 text-white border-jmde-orange/80 transition-colors duration-300"
